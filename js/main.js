@@ -23,7 +23,8 @@ const { createApp } = Vue
           },
 
 
-        ],  
+        ], 
+        newTask: null,
       }
     },
     methods: {
@@ -33,8 +34,20 @@ const { createApp } = Vue
 
         this.tasks = this.tasks.filter((task, index) => 
            index !== indexRicevuto);
-        console.log(this.tasks)
       },
+      addTask(){
+        console.log('aggiungi tsdk');
+        console.log(this.newTask);
+
+        const myTask = {
+          text: this.newTask,
+          done: false,
+        };
+
+        this.tasks.push(myTask);
+        this.newTask = null;
+
+      }
     }
   }).mount('#app');
 

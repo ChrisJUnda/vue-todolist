@@ -9,16 +9,28 @@
 <body>
     <div id="app">
         <h1> {{ title }} </h1>
-        <ul>
-            <li v-for="(task, index) in tasks" :key="`task-${index}`">
-                <span :class="{done: task.done}">
-                    {{ index }} -
-                    {{ task['text']}}
-                </span>
+        <section>
+            <label for="input-task">Inserisci un TO DO</label>
+            <input type="text" id="input-task" v-model="newTask">
+            <button @click="addTask">AGGIUNGI</button>
+            <hr>
+        </section>
 
-                <button @click="removeTask(index)">X</button>
-            </li>
-        </ul>
+
+        <section>
+            <ul>
+                <li v-for="(task, index) in tasks" :key="`task-${index}`">
+                    <span :class="{done: task.done}">
+                        {{ index }} -
+                        {{ task['text']}}
+                    </span>
+    
+                    <button @click="removeTask(index)">X</button>
+                </li>
+            </ul>
+
+        </section>
+        
     </div>
 
 
