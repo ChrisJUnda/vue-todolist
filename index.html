@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="app">
+        <h1> {{ title }} </h1>
+        <ul>
+            <li v-for="(task, index) in tasks" :key="`task-${index}`">
+                <span :class="{done: task.done}">
+                    {{ task['text']}}
+                </span>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+    <!--Script VUE-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!--/Script VUE-->
+
+    <!--Script JS-->
+    <script src="./js/main.js"></script>
+    <!--/Script JS-->  
+</body>
+</html>
