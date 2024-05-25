@@ -12,8 +12,11 @@
         <ul>
             <li v-for="(task, index) in tasks" :key="`task-${index}`">
                 <span :class="{done: task.done}">
+                    {{ index }} -
                     {{ task['text']}}
                 </span>
+
+                <button @click="removeTask(index)">X</button>
             </li>
         </ul>
     </div>

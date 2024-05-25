@@ -25,5 +25,23 @@ const { createApp } = Vue
 
         ],  
       }
+    },
+    methods: {
+      removeTask(indexRicevuto){
+        console.log(indexRicevuto)
+        console.log('RIMUOVO IL TASK')
+
+        this.tasks = this.tasks.filter((task, index) => 
+           index !== indexRicevuto);
+        console.log(this.tasks)
+      },
     }
-  }).mount('#app')
+  }).mount('#app');
+
+/*
+  button.addEventListener('click', function(){
+    removeTask(index);
+
+  })
+
+  */
